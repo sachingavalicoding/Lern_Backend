@@ -4,6 +4,7 @@
 import express from "express";
 import cors from "cors";
 import { db } from "./database/db.js";
+import empRouter  from "./router/empRouter.js";
 const app = express();
 
 
@@ -30,6 +31,7 @@ app.use(cors({
 
 
 // connect db
+app.use(empRouter);
 db();
 app.listen(4000 , () => {
     console.log(" Server is created ");
