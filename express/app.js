@@ -3,11 +3,11 @@
 
 import express from "express";
 import cors from "cors";
+import { db } from "./database/db.js";
 const app = express();
 
 
-
-/* // middle ware
+ // middle ware
 
 // build in middle ware
 app.use(express.json());
@@ -21,13 +21,16 @@ app.use(cors({
     methods:[ "GET" , "POST" , "PUT" , "DELETE"],
     credentials:true,
 }));
- */
+ 
 // methods in backend 
 // GET  - get data 
 // put - updated method 
 // delete - delete data
 // post  - create data or post data 
 
+
+// connect db
+db();
 app.listen(4000 , () => {
     console.log(" Server is created ");
 })
